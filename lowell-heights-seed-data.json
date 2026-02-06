@@ -1,0 +1,287 @@
+{
+  "_description": "Complete input data for Lowell Heights proforma. Load this into the database to validate the calc engine against the Excel spreadsheet. Every number here is an INPUT — the calc engine should reproduce the validation_targets and monthly_checkpoints from these inputs alone.",
+
+  "project": {
+    "name": "Lowell Heights",
+    "address": "5822 Lowell Larimer Rd SE Snohomish, WA",
+    "lot_size_acres": 7.5,
+    "start_date": "2024-08-31",
+    "total_units": 50,
+    "total_sf": 102048,
+    "timeline_months": 71,
+    "cost_of_sale_pct": 0.065,
+    "gc_fee_pct": 0.12,
+    "contingency_pct": 0.05
+  },
+
+  "phases": [
+    { "number": 1, "name": "Phase 1", "buildings": ["A","B","C","D","E"] },
+    { "number": 2, "name": "Phase 2", "buildings": ["F","G","H","I","J"] }
+  ],
+
+  "buildings": [
+    { "name": "A", "phase": 1, "unit_count": 5, "sf_per_unit": 2679 },
+    { "name": "B", "phase": 1, "unit_count": 6, "sf_per_unit": 2679 },
+    { "name": "C", "phase": 1, "unit_count": 6, "sf_per_unit": 1819 },
+    { "name": "D", "phase": 1, "unit_count": 5, "sf_per_unit": 1819 },
+    { "name": "E", "phase": 1, "unit_count": 5, "sf_per_unit": 1819 },
+    { "name": "F", "phase": 2, "unit_count": 5, "sf_per_unit": 1936 },
+    { "name": "G", "phase": 2, "unit_count": 5, "sf_per_unit": 1936 },
+    { "name": "H", "phase": 2, "unit_count": 4, "sf_per_unit": 1936 },
+    { "name": "I", "phase": 2, "unit_count": 5, "sf_per_unit": 1819 },
+    { "name": "J", "phase": 2, "unit_count": 4, "sf_per_unit": 1819 }
+  ],
+
+  "units": [
+    { "unit": 1,  "building": "A", "sf": 2679, "price": 1130000, "sale_month": 36 },
+    { "unit": 2,  "building": "A", "sf": 2679, "price": 1120000, "sale_month": 28 },
+    { "unit": 3,  "building": "A", "sf": 2679, "price": 1120000, "sale_month": 28 },
+    { "unit": 4,  "building": "A", "sf": 2679, "price": 1120000, "sale_month": 29 },
+    { "unit": 5,  "building": "A", "sf": 2679, "price": 1130000, "sale_month": 30 },
+    { "unit": 6,  "building": "B", "sf": 2679, "price": 1130000, "sale_month": 30 },
+    { "unit": 7,  "building": "B", "sf": 2679, "price": 1120000, "sale_month": 30 },
+    { "unit": 8,  "building": "B", "sf": 2679, "price": 1120000, "sale_month": 31 },
+    { "unit": 9,  "building": "B", "sf": 2679, "price": 1120000, "sale_month": 31 },
+    { "unit": 10, "building": "B", "sf": 2679, "price": 1120000, "sale_month": 32 },
+    { "unit": 11, "building": "B", "sf": 2679, "price": 1130000, "sale_month": 32 },
+    { "unit": 12, "building": "C", "sf": 1819, "price":  860000, "sale_month": 29 },
+    { "unit": 13, "building": "C", "sf": 1819, "price":  820000, "sale_month": 30 },
+    { "unit": 14, "building": "C", "sf": 1819, "price":  820000, "sale_month": 30 },
+    { "unit": 15, "building": "C", "sf": 1819, "price":  820000, "sale_month": 31 },
+    { "unit": 16, "building": "C", "sf": 1819, "price":  820000, "sale_month": 32 },
+    { "unit": 17, "building": "C", "sf": 1819, "price":  860000, "sale_month": 33 },
+    { "unit": 18, "building": "D", "sf": 1819, "price":  860000, "sale_month": 34 },
+    { "unit": 19, "building": "D", "sf": 1819, "price":  820000, "sale_month": 35 },
+    { "unit": 20, "building": "D", "sf": 1819, "price":  820000, "sale_month": 36 },
+    { "unit": 21, "building": "D", "sf": 1819, "price":  820000, "sale_month": 36 },
+    { "unit": 22, "building": "D", "sf": 1819, "price":  860000, "sale_month": 37 },
+    { "unit": 23, "building": "E", "sf": 1819, "price":  860000, "sale_month": 36 },
+    { "unit": 24, "building": "E", "sf": 1819, "price":  860000, "sale_month": 36 },
+    { "unit": 25, "building": "E", "sf": 1819, "price":  860000, "sale_month": 36 },
+    { "unit": 26, "building": "E", "sf": 1819, "price":  860000, "sale_month": 37 },
+    { "unit": 27, "building": "E", "sf": 1819, "price":  860000, "sale_month": 37 },
+    { "unit": 28, "building": "F", "sf": 1936, "price":  890000, "sale_month": 37 },
+    { "unit": 29, "building": "F", "sf": 1936, "price":  890000, "sale_month": 37 },
+    { "unit": 30, "building": "F", "sf": 1936, "price":  890000, "sale_month": 38 },
+    { "unit": 31, "building": "F", "sf": 1936, "price":  890000, "sale_month": 38 },
+    { "unit": 32, "building": "F", "sf": 1936, "price":  890000, "sale_month": 39 },
+    { "unit": 33, "building": "G", "sf": 1936, "price":  890000, "sale_month": 38 },
+    { "unit": 34, "building": "G", "sf": 1936, "price":  890000, "sale_month": 39 },
+    { "unit": 35, "building": "G", "sf": 1936, "price":  890000, "sale_month": 42 },
+    { "unit": 36, "building": "G", "sf": 1936, "price":  890000, "sale_month": 40 },
+    { "unit": 37, "building": "G", "sf": 1936, "price":  890000, "sale_month": 40 },
+    { "unit": 38, "building": "H", "sf": 1936, "price":  890000, "sale_month": 42 },
+    { "unit": 39, "building": "H", "sf": 1936, "price":  890000, "sale_month": 43 },
+    { "unit": 40, "building": "H", "sf": 1936, "price":  890000, "sale_month": 43 },
+    { "unit": 41, "building": "H", "sf": 1936, "price":  890000, "sale_month": 44 },
+    { "unit": 42, "building": "I", "sf": 1819, "price":  860000, "sale_month": 39 },
+    { "unit": 43, "building": "I", "sf": 1819, "price":  860000, "sale_month": 40 },
+    { "unit": 44, "building": "I", "sf": 1819, "price":  860000, "sale_month": 40 },
+    { "unit": 45, "building": "I", "sf": 1819, "price":  860000, "sale_month": 41 },
+    { "unit": 46, "building": "I", "sf": 1819, "price":  860000, "sale_month": 41 },
+    { "unit": 47, "building": "J", "sf": 1819, "price":  860000, "sale_month": 42 },
+    { "unit": 48, "building": "J", "sf": 1819, "price":  860000, "sale_month": 43 },
+    { "unit": 49, "building": "J", "sf": 1819, "price":  860000, "sale_month": 43 },
+    { "unit": 50, "building": "J", "sf": 1819, "price":  860000, "sale_month": 44 }
+  ],
+
+  "budget_line_items": [
+    { "category": "construction", "description": "Bldg A", "building": "A", "amount": 1960037.92, "method": "s_curve", "start_month": 19, "duration": 6, "steepness": 3 },
+    { "category": "construction", "description": "Bldg B", "building": "B", "amount": 2352045.51, "method": "s_curve", "start_month": 22, "duration": 6, "steepness": 3 },
+    { "category": "construction", "description": "Bldg C", "building": "C", "amount": 1597002.90, "method": "s_curve", "start_month": 19, "duration": 6, "steepness": 3 },
+    { "category": "construction", "description": "Bldg D", "building": "D", "amount": 1330835.75, "method": "s_curve", "start_month": 22, "duration": 6, "steepness": 3 },
+    { "category": "construction", "description": "Bldg E", "building": "E", "amount": 1330835.75, "method": "s_curve", "start_month": 22, "duration": 6, "steepness": 3 },
+    { "category": "construction", "description": "Bldg F", "building": "F", "amount": 1416436.51, "method": "s_curve", "start_month": 31, "duration": 6, "steepness": 3 },
+    { "category": "construction", "description": "Bldg G", "building": "G", "amount": 1416436.51, "method": "s_curve", "start_month": 31, "duration": 6, "steepness": 3 },
+    { "category": "construction", "description": "Bldg H", "building": "H", "amount": 1133149.21, "method": "s_curve", "start_month": 31, "duration": 6, "steepness": 3 },
+    { "category": "construction", "description": "Bldg I", "building": "I", "amount": 1330835.75, "method": "s_curve", "start_month": 34, "duration": 6, "steepness": 3 },
+    { "category": "construction", "description": "Bldg J", "building": "J", "amount": 1064668.60, "method": "s_curve", "start_month": 34, "duration": 6, "steepness": 3 },
+
+    { "category": "contingency", "description": "Bldg A contingency", "building": "A", "amount": 98001.90, "method": "s_curve", "start_month": 19, "duration": 6, "steepness": 3 },
+    { "category": "contingency", "description": "Bldg B contingency", "building": "B", "amount": 117602.28, "method": "s_curve", "start_month": 22, "duration": 6, "steepness": 3 },
+    { "category": "contingency", "description": "Bldg C contingency", "building": "C", "amount": 79850.15, "method": "s_curve", "start_month": 19, "duration": 6, "steepness": 3 },
+    { "category": "contingency", "description": "Bldg D contingency", "building": "D", "amount": 66541.79, "method": "s_curve", "start_month": 22, "duration": 6, "steepness": 3 },
+    { "category": "contingency", "description": "Bldg E contingency", "building": "E", "amount": 66541.79, "method": "s_curve", "start_month": 22, "duration": 6, "steepness": 3 },
+    { "category": "contingency", "description": "Bldg F contingency", "building": "F", "amount": 70821.83, "method": "s_curve", "start_month": 31, "duration": 6, "steepness": 3 },
+    { "category": "contingency", "description": "Bldg G contingency", "building": "G", "amount": 70821.83, "method": "s_curve", "start_month": 31, "duration": 6, "steepness": 3 },
+    { "category": "contingency", "description": "Bldg H contingency", "building": "H", "amount": 56657.46, "method": "s_curve", "start_month": 31, "duration": 6, "steepness": 3 },
+    { "category": "contingency", "description": "Bldg I contingency", "building": "I", "amount": 66541.79, "method": "s_curve", "start_month": 34, "duration": 6, "steepness": 3 },
+    { "category": "contingency", "description": "Bldg J contingency", "building": "J", "amount": 53233.43, "method": "s_curve", "start_month": 34, "duration": 6, "steepness": 3 },
+
+    { "category": "horizontal", "description": "Site Work", "amount": 4700000, "method": "s_curve", "start_month": 6, "duration": 11, "steepness": 3 },
+    { "category": "horizontal", "description": "Horizontal Contingency", "amount": 285000, "method": "s_curve", "start_month": 6, "duration": 10, "steepness": 3 },
+    { "category": "horizontal", "description": "Increased horizontal budget", "amount": 1000000, "method": "s_curve", "start_month": 6, "duration": 11, "steepness": 5 },
+
+    { "category": "soft_costs", "description": "Permits / Impact Fees", "amount": 910000, "method": "s_curve", "start_month": 6, "duration": 1, "steepness": 1 },
+    { "category": "soft_costs", "description": "Consultants", "amount": 360000, "method": "straight_line", "start_month": 1, "duration": 18 },
+    { "category": "soft_costs", "description": "Water & Sewer Fees", "amount": 1365000, "method": "s_curve", "start_month": 6, "duration": 1, "steepness": 5 },
+    { "category": "soft_costs", "description": "Property Taxes", "amount": 45000, "method": "s_curve", "start_month": 7, "duration": 1, "steepness": 1 },
+    { "category": "soft_costs", "description": "Insurance (builders risk)", "amount": 50000, "method": "s_curve", "start_month": 6, "duration": 29, "steepness": 5 },
+
+    { "category": "gc_fee", "description": "GC Fee - Bldg A", "building": "A", "amount": 235204.55, "method": "s_curve", "start_month": 19, "duration": 6, "steepness": 3 },
+    { "category": "gc_fee", "description": "GC Fee - Bldg B", "building": "B", "amount": 282245.46, "method": "s_curve", "start_month": 22, "duration": 6, "steepness": 4 },
+    { "category": "gc_fee", "description": "GC Fee - Bldg C", "building": "C", "amount": 191640.35, "method": "s_curve", "start_month": 19, "duration": 6, "steepness": 5 },
+    { "category": "gc_fee", "description": "GC Fee - Bldg D", "building": "D", "amount": 159700.29, "method": "s_curve", "start_month": 22, "duration": 6, "steepness": 6 },
+    { "category": "gc_fee", "description": "GC Fee - Bldg E", "building": "E", "amount": 159700.29, "method": "s_curve", "start_month": 22, "duration": 6, "steepness": 7 },
+    { "category": "gc_fee", "description": "GC Fee - Bldg F", "building": "F", "amount": 169972.38, "method": "s_curve", "start_month": 31, "duration": 6, "steepness": 8 },
+    { "category": "gc_fee", "description": "GC Fee - Bldg G", "building": "G", "amount": 169972.38, "method": "s_curve", "start_month": 31, "duration": 6, "steepness": 9 },
+    { "category": "gc_fee", "description": "GC Fee - Bldg H", "building": "H", "amount": 135977.91, "method": "s_curve", "start_month": 31, "duration": 6, "steepness": 10 },
+    { "category": "gc_fee", "description": "GC Fee - Bldg I", "building": "I", "amount": 159700.29, "method": "s_curve", "start_month": 34, "duration": 6, "steepness": 11 },
+    { "category": "gc_fee", "description": "GC Fee - Bldg J", "building": "J", "amount": 127760.23, "method": "s_curve", "start_month": 34, "duration": 6, "steepness": 12 },
+    { "category": "gc_fee", "description": "GC Fee - Contingency", "amount": 89593.71, "method": "s_curve", "start_month": 12, "duration": 23, "steepness": 3 },
+    { "category": "gc_fee", "description": "GC Fee - Horizontal", "amount": 718200.00, "method": "s_curve", "start_month": 6, "duration": 7, "steepness": 3 },
+    { "category": "gc_fee", "description": "GC Fee - Soft Costs", "amount": 327600.00, "method": "s_curve", "start_month": 1, "duration": 6, "steepness": 5 },
+    { "category": "gc_fee", "description": "Sales Tax", "amount": 302972.22, "method": "s_curve", "start_month": 6, "duration": 29, "steepness": 5 },
+
+    { "category": "land", "description": "Land Purchase", "amount": 2950000, "method": "lump_sum", "start_month": 1 },
+    { "category": "land", "description": "Earnest Money", "amount": 50000, "method": "lump_sum", "start_month": 1 }
+  ],
+
+  "capital_stack": {
+    "equity": {
+      "total_committed": 3685368.37,
+      "gp_pct": 0.59,
+      "lp_pct": 0.41,
+      "gp_amount": 2174367.34,
+      "lp_amount": 1511001.03
+    },
+    "senior_debt": {
+      "committed": 31647400.78,
+      "interest_rate": 0.11,
+      "interest_convention": "monthly",
+      "origination_fee_pct": 0.03,
+      "loan_release_pct": 1.15,
+      "_note": "release_pct means each unit sale pays off 115% of its allocated loan amount"
+    },
+    "mezz_debt": {
+      "committed": 0,
+      "interest_rate": 0
+    },
+    "land_loan": {
+      "committed": 0,
+      "interest_rate": 0
+    }
+  },
+
+  "financing_logic": {
+    "_note": "This is how the spreadsheet sequences capital draws each month",
+    "draw_order": [
+      "1. Equity funds first in month 1 (land + early costs) — all equity drawn by month 2",
+      "2. After equity exhausted, senior debt funds remaining development costs",
+      "3. Senior debt balance accrues interest monthly at rate/12",
+      "4. When units sell, loan payoff = allocated_loan_per_unit × release_pct (1.15x)",
+      "5. Allocated loan per unit = (total_dev_cost / total_sf) × unit_sf × LTC_ratio",
+      "6. Net cash from sale = gross_price - cost_of_sale - loan_payoff"
+    ],
+    "equity_draw_schedule": {
+      "month_1": 3666741.15,
+      "month_2": 18627.21,
+      "_total": 3685368.37
+    }
+  },
+
+  "promote_structure": {
+    "preferred_return": {
+      "rate": 0.18,
+      "gp_split": 0.0,
+      "lp_split": 1.0
+    },
+    "tier_1": {
+      "hurdle": 0.99999,
+      "gp_split": 0.99999,
+      "lp_split": 0.00001,
+      "_note": "GP catch-up — virtually all profit above pref goes to GP"
+    },
+    "tier_2": {
+      "hurdle": 0.99999,
+      "gp_split": 0.99999,
+      "lp_split": 0.00001
+    }
+  },
+
+  "validation_targets": {
+    "_note": "Your calc engine output must match these within 0.5% tolerance",
+    "summary_metrics": {
+      "total_development_cost": 30624139,
+      "total_with_financing": 35332769,
+      "total_revenue": 46040000,
+      "cost_of_sale": 2992600,
+      "senior_debt_committed": 31647401,
+      "equity_total": 3685368,
+      "equity_gp": 2174367,
+      "equity_lp": 1511001,
+      "senior_debt_interest_total": 3759208,
+      "project_profit": 7714631,
+      "profit_margin": 0.1676,
+      "levered_xirr": 0.4344,
+      "unlevered_xirr": 0.2601,
+      "equity_multiple_levered": 3.09,
+      "gp_xirr": 0.5393,
+      "lp_xirr": 0.2265,
+      "gp_multiple": 3.99,
+      "lp_multiple": 1.80
+    },
+
+    "monthly_development_costs": {
+      "_note": "Total development cost per month (before financing costs). Row 75 in spreadsheet.",
+      "1": 3033793.13, "2": 71263.31, "3": 118743.55, "4": 118743.55, "5": 71263.31,
+      "6": 2636262.96, "7": 549239.83, "8": 675964.93, "9": 829036.44, "10": 924385.86,
+      "11": 934594.53, "12": 860757.25, "13": 692668.86, "14": 554695.45, "15": 417529.75,
+      "16": 290843.11, "17": 45446.79, "18": 47488.06, "19": 457836.31, "20": 746338.84,
+      "21": 964504.40, "22": 1546882.60, "23": 1741720.05, "24": 1805325.53, "25": 1373821.63,
+      "26": 1017432.25, "27": 599864.47, "28": 13854.76, "29": 11348.89, "30": 9120.95,
+      "31": 449610.12, "32": 758441.27, "33": 1129186.07, "34": 1394825.00, "35": 1196185.13,
+      "36": 1133749.73, "37": 691344.83, "38": 443349.46, "39": 266675.76
+    },
+
+    "monthly_senior_debt_interest": {
+      "_note": "Senior debt interest accrual per month. Row 131 in spreadsheet.",
+      "3": 482.50, "4": 1575.40, "5": 2678.33, "6": 3356.13,
+      "7": 27552.63, "8": 32839.90, "9": 39337.28, "10": 47297.37,
+      "11": 56204.46, "12": 65286.79, "13": 73775.53, "14": 80801.27,
+      "15": 86626.65, "16": 91248.09, "17": 94750.59, "18": 96035.73,
+      "19": 97351.37, "20": 102440.59, "21": 110221.06, "22": 120072.71,
+      "23": 135353.14, "24": 152559.64, "25": 170506.92, "26": 187564.28,
+      "27": 198610.08, "28": 205929.43, "29": 191712.57, "30": 179226.43,
+      "31": 144576.88, "32": 127850.14, "33": 113728.56, "34": 118890.19,
+      "35": 126534.15, "36": 132717.17, "37": 105559.13, "38": 81270.53,
+      "39": 66732.11, "40": 50658.31, "41": 25760.88, "42": 13533.51
+    },
+
+    "monthly_senior_debt_balance": {
+      "_note": "Running senior debt balance (before loan releases from sales). Row 129 in spreadsheet. Peak balance = $22,465,029 in month 27.",
+      "2": 52636.10, "3": 171862.15, "4": 292181.10, "5": 366122.74,
+      "6": 3005741.83, "7": 3582534.29, "8": 4291339.12, "9": 5159712.84,
+      "10": 6131396.07, "11": 7122195.06, "12": 8048239.10, "13": 8814683.49,
+      "14": 9450180.20, "15": 9954336.60, "16": 10336427.80, "17": 10476625.18,
+      "18": 10620148.96, "19": 11175336.64, "20": 12024116.06, "21": 13098841.52,
+      "22": 14765796.84, "23": 16642870.03, "24": 18600755.20, "25": 20461557.76,
+      "26": 21666554.28, "27": 22465028.84, "28": 20914098.33, "29": 19551974.48,
+      "30": 15772023.75, "31": 13947288.01, "32": 12406751.70, "33": 12969838.36,
+      "34": 13803725.59, "35": 14478236.81, "36": 11515541.39, "37": 8865875.68,
+      "38": 7279866.99, "39": 5526361.12, "40": 2810277.72, "41": 1476382.68
+    },
+
+    "monthly_cumulative_total_cost": {
+      "_note": "Cumulative total project cost (dev costs + financing). Row 85 in spreadsheet. Final value = $35,332,769.",
+      "1": 3666741.15, "2": 3738004.46, "3": 3857230.51, "4": 3977549.47, "5": 4051491.11,
+      "6": 6691110.20, "7": 7267902.66, "8": 7976707.49, "9": 8845081.20, "10": 9816764.43,
+      "11": 10807563.43, "12": 11733607.46, "13": 12500051.85, "14": 13135548.57,
+      "15": 13639704.97, "16": 14021796.17, "17": 14161993.54, "18": 14305517.33,
+      "19": 14860705.00, "20": 15709484.43, "21": 16784209.89, "22": 18451165.20,
+      "23": 20328238.39, "24": 22286123.56, "25": 24146926.12, "26": 25351922.65,
+      "27": 26150397.20, "28": 26370181.39, "29": 26573242.84, "30": 26761590.22,
+      "31": 27355777.23, "32": 28242068.64, "33": 29484983.27, "34": 30998698.46,
+      "35": 32321417.73, "36": 33587884.63, "37": 34384788.59, "38": 34909408.58,
+      "39": 35242816.45, "40": 35293474.76, "41": 35319235.64, "42": 35332769.15
+    },
+
+    "monthly_gross_sales": {
+      "_note": "Gross sale proceeds by month (before cost of sale and loan payoff). Row 193 in spreadsheet.",
+      "28": 2094400, "29": 1851300, "30": 4693700, "31": 2861100, "32": 2870450,
+      "33": 804100, "34": 804100, "35": 766700, "36": 5002250, "37": 4076600,
+      "38": 2496450, "39": 2468400, "40": 3272500, "41": 1608200, "42": 2468400,
+      "43": 3272500, "44": 1636250
+    }
+  }
+}
