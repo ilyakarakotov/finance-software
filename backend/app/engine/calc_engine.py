@@ -23,6 +23,7 @@ class LineItemInput:
     start_month: int
     duration_months: int
     s_curve_steepness: int = 5
+    division_code: Optional[str] = None  # New: CSI division code for hierarchical budgets
 
 
 @dataclass
@@ -127,6 +128,40 @@ CATEGORY_MAP = {
     "other": "other",
 }
 
+# CSI Division-to-cashflow mapping (for new hierarchical budget system)
+# Items with division_code use this mapping, items without use CATEGORY_MAP
+DIVISION_MAP = {
+    "01000": "soft_costs",          # General Conditions (pre-dev, admin, temp facilities)
+    "02000": "horizontal",          # Site Construction (earthwork, utilities, drainage, landscaping)
+    "03000": "construction_cost",   # Concrete
+    "04000": "construction_cost",   # Masonry
+    "05000": "construction_cost",   # Metals (structural framing, ornamental)
+    "06000": "construction_cost",   # Wood, Plastics, Composites
+    "07000": "construction_cost",   # Thermal & Moisture Protection
+    "08000": "construction_cost",   # Openings (doors, windows)
+    "09000": "construction_cost",   # Finishes (drywall, flooring, paint)
+    "10000": "construction_cost",   # Specialties
+    "11000": "construction_cost",   # Equipment
+    "12000": "construction_cost",   # Furnishings
+    "13000": "construction_cost",   # Special Construction
+    "14000": "construction_cost",   # Conveying Equipment (elevators)
+    "15000": "construction_cost",   # Mechanical (plumbing, HVAC)
+    "16000": "construction_cost",   # Electrical
+    "21000": "construction_cost",   # Fire Suppression
+    "22000": "construction_cost",   # Plumbing
+    "23000": "construction_cost",   # HVAC
+    "26000": "construction_cost",   # Electrical
+    "27000": "construction_cost",   # Communications
+    "28000": "construction_cost",   # Electronic Safety & Security
+    "31000": "horizontal",          # Earthwork (alternate numbering)
+    "32000": "horizontal",          # Exterior Improvements
+    "33000": "horizontal",          # Utilities
+    # Virtual/special categories (not CSI divisions, kept for backward compat)
+    "gc_fee": "gc_fee",
+    "contingency": "contingency",
+    "land": "land",
+}
+
 
 def run_calc_engine(
     start_date: datetime,
@@ -166,7 +201,12 @@ def run_calc_engine(
                 item.budget_amount, item.duration_months
             )
 
-        category_field = CATEGORY_MAP.get(item.category, "other")
+        # Determine category field: use DIVISION_MAP if division_code exists, else CATEGORY_MAP
+        if item.division_code and item.division_code in DIVISION_MAP:
+            category_field = DIVISION_MAP[item.division_code]
+        else:
+            category_field = CATEGORY_MAP.get(item.category, "other")
+
         for i, amount in enumerate(monthly_amounts):
             month_idx = item.start_month + i
             if 0 <= month_idx < total_months:

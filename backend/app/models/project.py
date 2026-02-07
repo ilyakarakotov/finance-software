@@ -38,3 +38,6 @@ class Project(Base):
     capital_tranches = relationship("CapitalStackTranche", back_populates="project", cascade="all, delete-orphan")
     promote_tiers = relationship("PromoteTier", back_populates="project", cascade="all, delete-orphan")
     monthly_cashflows = relationship("MonthlyCashflow", back_populates="project", cascade="all, delete-orphan")
+    loan_draws = relationship("LoanDraw", back_populates="project", cascade="all, delete-orphan")
+    builders_capital_mappings = relationship("BuildersCapitalMapping", back_populates="project", cascade="all, delete-orphan")
+    budget_benchmarks = relationship("BudgetBenchmark", back_populates="project", cascade="all, delete-orphan")

@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional, List
 from datetime import datetime
 
@@ -14,8 +14,7 @@ class PhaseResponse(PhaseCreate):
     project_id: int
     buildings: List["BuildingResponse"] = []
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class BuildingCreate(BaseModel):
@@ -26,6 +25,15 @@ class BuildingCreate(BaseModel):
     total_sf: Optional[int] = None
     construction_start_month: int = 1
     construction_duration: int = 6
+    gross_sf: Optional[int] = None
+    far_sf: Optional[int] = None
+    garage_sf: Optional[int] = None
+    crawl_space_sf: Optional[int] = None
+    slab_on_grade_sf: Optional[int] = None
+    price_range: Optional[float] = None
+    project_type: Optional[str] = None
+    owner: Optional[str] = None
+    duration_weeks: Optional[int] = None
 
 
 class BuildingUpdate(BaseModel):
@@ -35,14 +43,22 @@ class BuildingUpdate(BaseModel):
     total_sf: Optional[int] = None
     construction_start_month: Optional[int] = None
     construction_duration: Optional[int] = None
+    gross_sf: Optional[int] = None
+    far_sf: Optional[int] = None
+    garage_sf: Optional[int] = None
+    crawl_space_sf: Optional[int] = None
+    slab_on_grade_sf: Optional[int] = None
+    price_range: Optional[float] = None
+    project_type: Optional[str] = None
+    owner: Optional[str] = None
+    duration_weeks: Optional[int] = None
 
 
 class BuildingResponse(BuildingCreate):
     building_id: int
     units: List["UnitResponse"] = []
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class UnitCreate(BaseModel):
@@ -72,8 +88,7 @@ class UnitResponse(BaseModel):
     price_per_sf: Optional[float] = None
     status: str
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ProjectCreate(BaseModel):
@@ -142,15 +157,13 @@ class ProjectResponse(BaseModel):
     use_ltc_ratio: bool = False
     ltc_ratio: Optional[float] = None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ProjectDetailResponse(ProjectResponse):
     phases: List[PhaseResponse] = []
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 # Forward reference updates

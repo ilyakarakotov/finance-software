@@ -2,16 +2,20 @@ import { NavLink, Outlet, useParams } from 'react-router-dom';
 import { clsx } from 'clsx';
 import {
   Building2, DollarSign, Layers, BarChart3, ShoppingCart,
-  LayoutDashboard, Calendar, Home,
+  LayoutDashboard, Calendar, Home, FileSpreadsheet, Landmark, TrendingUp, ListTree,
 } from 'lucide-react';
 
 const navItems = [
   { path: 'setup', label: 'Project Setup', icon: Building2 },
   { path: 'budget', label: 'Budget', icon: DollarSign },
+  { path: 'budget-v2', label: 'Budget (Enhanced)', icon: FileSpreadsheet },
   { path: 'capital', label: 'Capital Stack', icon: Layers },
   { path: 'cashflow', label: 'Cashflow', icon: Calendar },
   { path: 'dashboard', label: 'Dashboard', icon: BarChart3 },
   { path: 'sales', label: 'Sales', icon: ShoppingCart },
+  { path: 'loan-draws', label: 'Loan Draws', icon: Landmark },
+  { path: 'builders-capital', label: 'Builders Capital', icon: TrendingUp },
+  { path: 'benchmarks', label: 'Benchmarks', icon: BarChart3 },
 ];
 
 export default function AppLayout() {
@@ -33,7 +37,23 @@ export default function AppLayout() {
               </span>
             )}
           </div>
-          <div className="text-xs text-slate-500">v1.0 — Phase 1</div>
+          <div className="flex items-center gap-4">
+            <NavLink
+              to="/cost-code-template"
+              className={({ isActive }) =>
+                clsx(
+                  'flex items-center gap-1.5 text-xs px-3 py-1.5 rounded transition-colors',
+                  isActive
+                    ? 'bg-amber-600/20 text-amber-400 font-medium'
+                    : 'text-slate-400 hover:text-amber-400'
+                )
+              }
+            >
+              <ListTree size={14} />
+              Cost Code Template
+            </NavLink>
+            <span className="text-xs text-slate-500">v1.0 — Phase 1</span>
+          </div>
         </div>
       </header>
 

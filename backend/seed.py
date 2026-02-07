@@ -18,6 +18,8 @@ from app.models.budget_line_item import BudgetLineItem
 from app.models.capital_stack import CapitalStackTranche
 from app.models.promote_tier import PromoteTier
 from app.models.monthly_cashflow import MonthlyCashflow
+from app.models.contractor import Contractor
+from app.models.loan_draw import LoanDraw
 
 # ── Load seed JSON ──────────────────────────────────────────────────
 seed_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "lowell-heights-seed-data.json")
@@ -90,6 +92,14 @@ try:
         )
         db.add(building)
         db.flush()
+
+        # Update with new SF fields and project info
+        building.gross_sf = building.total_sf or (building.sf_per_unit or 0) * building.unit_count
+        building.far_sf = int(building.gross_sf * 0.88) if building.gross_sf else 0
+        building.garage_sf = int(building.gross_sf * 0.15) if building.gross_sf else 0
+        building.price_range = 950000
+        building.project_type = "TH"
+
         building_map[b["name"]] = building
         print(f"    Building {b['name']}: {b['unit_count']} units × {b['sf_per_unit']} SF (id={building.building_id})")
 
@@ -111,6 +121,31 @@ try:
         db.add(unit)
     db.flush()
     print(f"  Created {len(data['units'])} units")
+
+    # ── 4b. Contractors (for Building A) ──────────────────────────
+    building_a = building_map.get("A")
+    if building_a:
+        gc_site = Contractor(
+            building_id=building_a.building_id,
+            name="Site GC",
+            code="GCX",
+            scope_description="Division 2: Site Construction"
+        )
+        gc_primary = Contractor(
+            building_id=building_a.building_id,
+            name="Primary GC",
+            code="GCD",
+            scope_description="Divisions 1, 3-16: General Conditions and Construction"
+        )
+        gc_specialty = Contractor(
+            building_id=building_a.building_id,
+            name="Specialty GC",
+            code="GCH",
+            scope_description="Division 5+: Metals, Specialty Work"
+        )
+        db.add_all([gc_site, gc_primary, gc_specialty])
+        db.flush()
+        print(f"  Created 3 contractors for Building A")
 
     # ── 5. Budget Line Items ────────────────────────────────────────
     for li in data["budget_line_items"]:

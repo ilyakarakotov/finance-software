@@ -5,6 +5,11 @@ from app.config import get_settings
 from app.database import engine, Base
 from app.models import *  # noqa: F401, F403
 from app.api import projects, budget, capital, cashflow
+from app.api.cost_codes import router as cost_codes_router
+from app.api.contractors import router as contractors_router
+from app.api.benchmarks import router as benchmarks_router
+from app.api.loan_draws import router as loan_draws_router
+from app.api.builders_capital import router as builders_capital_router
 
 settings = get_settings()
 
@@ -29,6 +34,11 @@ app.include_router(projects.router, prefix="/api")
 app.include_router(budget.router, prefix="/api")
 app.include_router(capital.router, prefix="/api")
 app.include_router(cashflow.router, prefix="/api")
+app.include_router(cost_codes_router, prefix="/api")
+app.include_router(contractors_router, prefix="/api")
+app.include_router(benchmarks_router, prefix="/api")
+app.include_router(loan_draws_router, prefix="/api")
+app.include_router(builders_capital_router, prefix="/api")
 
 
 @app.get("/api/health")
